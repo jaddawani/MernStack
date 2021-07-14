@@ -11,7 +11,13 @@ function App() {
       <PersonCard name={"Hussari, Rahaf"} age={25} color={"Brown"}/>
       <PersonCard name={"Dawani, Jad"} age={24} color={"Black"}/>
     </div>
+
+
   );
+
+
+
+
 }
 
 export default App;
