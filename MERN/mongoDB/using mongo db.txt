@@ -1,0 +1,35 @@
+use myfirst-db;
+db.create collection ("students");
+db.students.insert({"name: jad" , home_state:"CA" , lucky_number:7 , birthday:{month:12 , day:29 , year:1987}})  
+db.students.insert({"name: wade3" , home_state:"NY" , lucky_number:8 , birthday:{month:1 , day:24 , year:1897}}) 
+db.students.insert({"name: zaheda" , home_state:"GE" , lucky_number:99 , birthday:{month:2 , day:14 , year:1997}}) 
+db.students.insert({"name: ayyman" , home_state:"CA" , lucky_number:100 , birthday:{month:3 , day:2 , year:1998}}) 
+db.students.insert({"name: alaa" , home_state:"WA" , lucky_number:63 , birthday:{month:8 , day:8 , year:1967}}) 
+db.students.find({}).pretty();
+db.students.find(home_state:{$in{["WA","CA"]}});
+db.students.find(luucky_number:{$gt : 3});
+db.students.find(luucky_number:{$lte : 10});
+db.students.find(luucky_number:{$gt : 1 , $lte : 9});
+db.students.updateMany({}, {$set : interests{["coding" , "brunch" , "mongodb"]}});
+db.students.update({name : "jad"} , {$push : {interests:"python"}});
+db.students.update({name:"jad"} , {$pull : {interest : "python"}});
+db.students.deleteMany({home_state: "CA"});
+db.students.delete({name:"jad"};
+db.students.deleteOne({lucky_number:{$gt : 5}};
+db.students.updateMany({home_state : "WA"} , {$inc : {lucky_number : 1}});
+db.students.updateMany({lucky_number} , {$rename : {lucky_number : belts_erand}});
+db.students.updateMany({}, {$unset : interests : ""});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
