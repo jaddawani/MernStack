@@ -1,8 +1,11 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
+app.use(cors());
 
 // This will fire our mongoose.connect statement to initialize our database connection
 require("./server/config/mongoose.config");
+
 
 app.use(express.json(), express.urlencoded({ extended: true }));
 
